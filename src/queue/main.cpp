@@ -11,7 +11,6 @@ int main() {
 
 	for (int index = 0; index < 5; index++) {
 		int element = queue.dequeue();
-		std::cout << "Removed element: "<< element << std::endl;
 	}
 
 	queue.enqueue(60);

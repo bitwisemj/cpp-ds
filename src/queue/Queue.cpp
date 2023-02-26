@@ -17,7 +17,6 @@ void Queue::enqueue(int element) {
     if (is_full()) {
         throw "Queue is full";
     }
-
     elements[rear % length] = element;
     rear += 1;
 }
@@ -27,6 +26,7 @@ int Queue::dequeue() {
     if (is_empty()) {
         throw "Queue is empty";
     }
+
     int index = front % length;
     int element = elements[index];
     elements[index] = 0;
