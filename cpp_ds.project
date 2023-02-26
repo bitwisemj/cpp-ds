@@ -93,6 +93,9 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
+    <VirtualDirectory Name="queue">
+      <File Name="src/queue/main.cpp"/>
+    </VirtualDirectory>
     <VirtualDirectory Name="stack">
       <File Name="src/stack/headers/Stack.cpp"/>
       <VirtualDirectory Name="headers">

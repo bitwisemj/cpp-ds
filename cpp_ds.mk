@@ -64,7 +64,7 @@ AS       := C:/mingw64/bin/as.exe
 ## User defined environment variables
 ##
 CodeLiteDir:=C:\Program Files\CodeLite
-Objects0=$(IntermediateDirectory)/src_stack_headers_Stack.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_stack_main.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/src_queue_main.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_stack_headers_Stack.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_stack_main.cpp$(ObjectSuffix) 
 
 
 
@@ -95,6 +95,11 @@ PreBuild:
 ##
 ## Objects
 ##
+$(IntermediateDirectory)/src_queue_main.cpp$(ObjectSuffix): src/queue/main.cpp 
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/mathe/OneDrive/projects/c++/c++/cpp_ds/src/queue/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_queue_main.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_queue_main.cpp$(PreprocessSuffix): src/queue/main.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_queue_main.cpp$(PreprocessSuffix) src/queue/main.cpp
+
 $(IntermediateDirectory)/src_stack_headers_Stack.cpp$(ObjectSuffix): src/stack/headers/Stack.cpp 
 	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/mathe/OneDrive/projects/c++/c++/cpp_ds/src/stack/headers/Stack.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_stack_headers_Stack.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/src_stack_headers_Stack.cpp$(PreprocessSuffix): src/stack/headers/Stack.cpp

@@ -1,0 +1,5 @@
+.vscode
+.clang-format
+.clangd
+cpp_ds.mk
+cpp_ds.project
