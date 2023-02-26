@@ -3,3 +3,4 @@
 .clangd
 cpp_ds.mk
 cpp_ds.project
+*.exe
