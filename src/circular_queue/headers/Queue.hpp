@@ -1,7 +1,8 @@
 #pragma once
-#include <math.h>
+#include <algorithm>
 
 class Queue {
+
     private:
         int* elements;
         int length;

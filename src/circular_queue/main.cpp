@@ -17,8 +17,7 @@ int main() {
     queue.enqueue(60);
     queue.enqueue(70);
     queue.enqueue(80);
-    std::cout << "Queue is empty: "<< queue.is_empty() << std::endl;
-    std::cout << "Queue is full: "<< queue.is_full() << std::endl;
+ 
 
     return 0;
 }

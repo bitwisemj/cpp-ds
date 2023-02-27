@@ -1,5 +1,5 @@
 #include "headers/Queue.hpp"
-
+#include <iostream>
 Queue::Queue(int length) :
 length(length),
 front(-1),
@@ -17,6 +17,7 @@ void Queue::enqueue(int element) {
     if (is_full()) {
         throw "Queue is full";
     }
+
     front = std::max(0, front);
     rear = (rear + 1) % length;
     elements[rear] = element;
@@ -24,27 +25,25 @@ void Queue::enqueue(int element) {
 
 int Queue::dequeue() {
 
-    if (is_empty())  {
+    if (is_empty()) {
         throw "Queue is empty";
     }
 
-    int element = elements[front];
-    int front_index = (front + 1) % length;
-
     if (front == rear) {
-        front_index = -1;
+        front = -1;
         rear = -1;
     }
-    
-    front = front_index;
+
+    front = (front + 1) % length;
+    int element = elements[front];
+    elements[front] = 0;
     
     return element;
 }
 
 bool Queue::is_full() {
-
-    return (front == 0 && rear == length -  1) ||
-            (front == rear + 1);
+    return (front - rear == 1) ||
+            (rear - front) == length;
 }
 
 bool Queue::is_empty() {
@@ -52,5 +51,7 @@ bool Queue::is_empty() {
 }
 
 int Queue::peek() {
-    return elements[front];
+
+    int index = length - 1;
+    return elements[index];
 }
